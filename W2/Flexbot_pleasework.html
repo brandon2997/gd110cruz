@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox</title>
+    <style>
+        html,body{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: gray;
+            background-image: url(W2_image/oriental-tiles.png);
+            background-repeat: repeat;
+        }
+        #container{
+            width: 1000px;
+            height: 800px;
+            background-color:rgba(0, 255,0,0.4 alpha);
+            display: flex;
+            flex-direction: column;
+        }
+        #header{background-color: goldenrod;
+        text-align: center;}
+        #nav{background-color: magenta;
+        display: flex;
+        justify-content: center;
+        }
+        #content{background-color: maroon;
+        display: flex;}
+        #footer{background-color: mediumaquamarine;
+        text-align: center;}
+        
+        .btn:link{
+            background-color: olive;
+            color: orchid;
+            padding: 10px;
+            margin: 20px 20px 20px 0px;
+            font-size: larger;
+            text-decoration: none;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.644) 4px 4px;
+        }
+        .btn:visited{
+            color: black;
+        }
+        .btn:hover{background-color: brown;}
+        .btn:active{color: black;}
+        .content-left{
+            width: 500px;
+            height: 500px;
+            background-color: burlywood;
+        }
+        .content-right{            width: 500px;
+            height: 500px;
+            background-color: gray}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>welcome to the flexbox div page</h1></div>
+        <div id="nav">
+            <a href="#"class="btn">home</a>
+            <a href="#"class="btn">bio</a>
+            <a href="#"class="btn">images</a>
+            <a href="#"class="btn">Contact</a>
+        </div>
+        <div id="content">
+            <div class="content-left">left content will be hear
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum. Nunc scelerisque viverra mauris in aliquam sem fringilla. Pretium vulputate sapien nec sagittis aliquam. Quis vel eros donec ac. Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Nibh cras pulvinar mattis nunc sed blandit libero. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget. Ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Proin nibh nisl condimentum id venenatis. In mollis nunc sed id semper risus in hendrerit. Aliquam faucibus purus in massa tempor. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum. Est sit amet facilisis magna. Non blandit massa enim nec dui nunc mattis enim ut. Non nisi est sit amet facilisis magna etiam.</p>
+            </div>
+            <div class="content-right">right content will be hear
+                <p>Pariatur labore exercitation adipisicing culpa elit enim tempor officia in irure est minim qui. Voluptate in incididunt sit deserunt amet anim. Culpa ad sint in id. Cillum et fugiat enim ullamco aute officia mollit commodo eu id ullamco eu. Enim culpa ipsum velit cillum mollit ea eu.</p>
+                <img src="W2_image/yarn.jpg" alt="yarn" width="500px">
+            </div>
+        </div>
+        <div id="footer">
+            &copy; 2020 
+        </div>
+    </div>
+</body>
+</html>
