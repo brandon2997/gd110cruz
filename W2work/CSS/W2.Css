@@ -1,0 +1,74 @@
+
+html,body{
+    margin: 0;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+}
+#container{
+    width: 950px;
+    padding: 10px;
+    background-color: maroon;
+    border: black 1px solid;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.btn{ 
+    background-color: navy;
+    color: gray;
+    padding: 10px;
+    margin: 20px 20px 20px 0px;
+    font-size: larger;
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.644) 4px 4px;
+}
+.btn:visited{
+    background-color: navy;
+}
+.btn:hover{background-color: purple;}
+.btn:active{color: black;}
+.section{
+    width: 930px;
+    padding: 10px;
+    background-color: orangered;
+    border: black 1px solid;
+    text-align: left;
+}
+.list{
+    text-align: left;
+    background-color: peru;
+    border:black 1px solid
+
+}
+.image_2{
+    width: 750px;
+    height: 562px;
+    padding: 30px;
+    background-color: orangered;
+    margin: 60px;
+    border-radius: 15px;
+}
+.image_1{
+    width: 300px; 
+    height: 600px;
+    padding: 30px;
+    background-color: orangered;
+    border-radius: 15px;
+}
+#p_stlye{
+    background-color: peru;
+}
+.footer{
+    background-color: orangered;
+}
+#riddle{
+    background-color: peru;
+    margin-top: 15px;
+}
+
