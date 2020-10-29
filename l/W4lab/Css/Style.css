@@ -27,12 +27,15 @@ nav{
 main{
     display: flex;
     justify-content: center;
+    padding: 10px;
 }
 canvas{
     border: 1px soild black;
     background-color: teal;
+    margin-bottom: 10px;
 }
 footer{
     background-color: whitesmoke;
     margin-bottom: 10px;
+    text-align: center;
 }
