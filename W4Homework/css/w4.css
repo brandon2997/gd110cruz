@@ -2,17 +2,18 @@
 html,body{
     height: 100%;
     margin: 0px;
+    display: flex;
 
 }
 body{
-        display: flex;
-    justify-content: center;
+    font-family: 'Grandstander', cursive;
 }
 #container{
     width: 1000px;
     padding: 10px;
-    background-color: chartreuse;
-   
+    background-color: blanchedalmond;
+          display: flex;
+    flex-direction: column;  
 }
 header{
     background-color: gray;
@@ -39,4 +40,46 @@ nav{
 }
 .bnt:hover{
     background-color: orange;
+}
+
+.bnt:visited{
+    background-color: red;
+}
+
+.bnt:active{
+    background-color: red;
+}.main-cont{
+    display: flex;
+    flex-direction: row;
+}
+#content{
+    height: 340px;
+    width: 1000px;
+    background-color: honeydew;
+}
+#content-right{
+    height: 300px;
+    width: 250px;
+    background-color: honeydew;
+    text-align: left;
+    border: black solid 20px;
+}
+.images{
+    width: 650px;
+    height: 300px;
+    padding-left: 30px;
+}
+
+#content-edu{
+    height: 300px;
+    width: 290px;
+    background-color: honeydew;
+    text-align: left;
+    border: black solid 20px;
+    display: flex;
+    flex-direction: row;
+}
+#riddle{
+    background-color: honeydew;
+    margin-top: 15px;
 }

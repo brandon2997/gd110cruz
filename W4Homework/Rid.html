@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brandon Home page</title>
     <link rel="stylesheet" href="css/w4.css">
+    <script src="js/Java.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@300&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div id="container">
@@ -12,11 +15,62 @@
         <h1>place</h1>
 
         <nav>
-            <a href="#"class>Bio</a>
-            <a href="#"class>Education</a>
-            <a href="#"class>Riddles</a>
+            <a href="index.html"class="bnt">Bio</a>
+            <a href="Edu.html"class="bnt">Education</a>
+            <a href="#"class="bnt">Riddles</a>
         </nav>
-        <div id="content"></div>
+        <div id="content">
+            <div id="riddle">
+                <p>1.What is a ghost's favorite dessert???</p>
+                <input type="button" value="answer" class="answer-btn"
+                onclick="showanswer('Ice Scream','answer1')">
+                <span id="answer1"></span>
+                <p>2.A sphere has three, a circle has two, and a point has zero. What is it?</p>
+                <input type="button" value="answer" class="answer-btn"
+                onclick="showanswer('Dimensions','answer2')">
+                <span id="answer2"></span>
+
+                <p>3.David's father has three sons: Snap, Crackle, and ?</p>
+                <input type="button" value="answer" class="answer-btn"
+                onclick="showanswer('David','answer3')">
+                <span id="answer3"></span>
+
+                <p>4.What room do ghosts avoid?</p>
+                <input type="button" value="answer" class="answer-btn"
+                onclick="showanswer('The Living Room','answer4')">
+                <span id="answer4"></span>
+
+                <p>5.A 4 year old boy has a brother half his age, how old is his brother when the the 4 year old is 100 ?</p>
+                <input type="button" value="answer" class="answer-btn"
+                onclick="showanswer('98','answer5')">
+                <span id="answer5"></span>
+
+                <p>6.Why is Europe like a frying pan?</p>
+                <input type="button" value="answer" class="answer-btn"
+                onclick="showanswer('Because it has Greece at the bottom','answer6')">
+                <span id="answer6"></span>
+
+                <p>7.What did the baseball glove say to the ball?</p>
+                <input type="button" value="answer" class="answer-btn"
+                onclick="showanswer('Catch you later.','answer7')">
+                <span id="answer7"></span>
+
+                <p>8.When is a doctor most annoyed?</p>
+                <input type="button" value="answer" class="answer-btn"
+                onclick="showanswer('When he is out of patients','answer8')">
+                <span id="answer8"></span>
+
+                <p>9.When is it bad luck to see a black cat?</p>
+                <input type="button" value="answer" class="answer-btn"
+                onclick="showanswer('When you are a mouse','answer9')">
+                <span id="answer9"></span>
+
+                <p>10.I can be cracked, I can be made. I can be told, I can be played. What am I?</p>
+                <input type="button" value="answer" class="answer-btn"
+                onclick="showanswer('A Joke','answer10')">
+                <span id="answer10"></span>
+            </div>
+        </div>
         <footer></footer>
     </header>
 </div>
