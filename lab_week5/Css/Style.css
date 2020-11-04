@@ -1,0 +1,41 @@
+/*css goes here*/
+
+html,body{
+    height: 100%;
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    font-family: 'Turret Road', cursive;
+}
+
+#container{
+    width: 1000px;
+    padding: 10px;
+    background-color: cornflowerblue;
+}
+header{
+    background-color: gray;
+    margin-bottom: 10px;
+    text-align: center;
+}
+nav{
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+}
+main{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+canvas{
+    border: 1px soild black;
+    background-color: teal;
+    margin-bottom: 10px;
+}
+footer{
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+    text-align: center;
+}
