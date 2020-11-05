@@ -8,17 +8,29 @@ var timer = requestAnimationFrame(draw)
 var x = 0
 var start = 105
 var finsh = 700
-var startfuel = 600
+var startfuel = randomRange(702, 100)
 var fuel = startfuel
 var barfullwidth = 300
 var seconds = 3
 var fps = 60
 var frames = fps
-var car = Car()
-console.log(car.x, car.y)
+var car = new Car()
+car.w = 100
+car.h = 45
+car.color = "green"
+car.y = 400
+var car2 = new Car()
+car2.w = 75
+car2.h = 60
+car2.y = 300
+var car3 = new Car()
+car3.w = 100
+car3.h = 60
+car3.y = 200
 function draw() {
     timer = requestAnimationFrame(draw)
     ctx.clearRect(0, 0, C.width, C.height)
+
 
     if (seconds > 0) {
         runStartTimer()
@@ -42,17 +54,22 @@ function draw() {
     ctx.fillText("week 4 lab", C.width / 2, 50)
     ctx.strokeText("week 4 lab", C.width / 2, 50)
 
-    drawpsrite()
+    //drawpsrite()
     drawStartLine()
     drawfinshLine()
-    drawCar()
+    //drawCar()
     drawFuelbar()
     drawFueltext()
     if (fuel <= 0 || x + 100 > finsh) {
         drawResults()
     }
 
-
+    car.x = x
+    car.draw()
+    car2.x = x
+    car2.draw()
+    car3.x = x
+    car3.drawSprite()
 }
 
 function runStartTimer() {
