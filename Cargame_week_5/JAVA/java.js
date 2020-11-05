@@ -4,11 +4,11 @@ var mario = new Image()
 mario.src = 'images/radock.gif'
 var timer = requestAnimationFrame(draw)
 var x = 0
-var start = 105
-var finsh = 700
-var startfuel = 600
+var start = 58
+var finsh = 956
+var startfuel = 950
 var fuel = startfuel
-var barfullwidth = 300
+var barfullwidth = 512
 var seconds = 3
 var fps = 60
 var frames = fps
@@ -32,11 +32,6 @@ function draw() {
     }
 
     ctx.lineWidth = 1
-    ctx.fillStyle = 'black'
-    ctx.font = "50px Arial"
-    ctx.textAlign = "center"
-    ctx.fillText("week 4 lab", C.width / 2, 50)
-    ctx.strokeText("week 4 lab", C.width / 2, 50)
 
     drawpsrite()
     drawStartLine()
@@ -71,11 +66,11 @@ function drawStartTimer() {
 //}
 function drawStartLine() {
     ctx.fillStyle = 'black'
-    ctx.fillRect(start, 100, 10, 400)
+    ctx.fillRect(start, 100, 10, 800)
 }
 function drawfinshLine() {
     ctx.fillStyle = 'purple'
-    ctx.fillRect(finsh, 100, 10, 400)
+    ctx.fillRect(finsh, 100, 10, 800)
 }
 function drawFuelbar() {
     var currentBarwidth = barfullwidth * getfuelpercent()
@@ -105,5 +100,7 @@ function drawResults() {
     }
 }
 function drawpsrite(){
-    ctx.drawImage(mario, x, C.height / 2, 100, 50)
+    ctx.drawImage(mario, x, C.height / 2-50, 100, 100)
+    ctx.drawImage(mario, x, C.height / 2+100, 100, 100)
+
 }

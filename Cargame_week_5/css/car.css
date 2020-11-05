@@ -18,10 +18,10 @@ header{
     margin-bottom: 10px;
     text-align: center;
 }
-nav{
+/*nav{
     background-color: whitesmoke;
     margin-bottom: 10px;
-}
+}*/
 main{
     display: flex;
     justify-content: center;
