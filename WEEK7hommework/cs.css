@@ -6,9 +6,10 @@ body{
     display: flex;
     justify-content: center;
     font-family: 'Grandstander', cursive;
+    background-color: #f92626;
 }
 nav{
-    background-color: whitesmoke;
+    background-color: #f92626;
     margin-bottom: 10px;
     display: flex;
     justify-content: center;
@@ -17,7 +18,7 @@ nav{
     width: 100px;
     height: 50px;
     color: white;
-    background-color: red;
+    background-color: black;
     margin-right: 5px;
     text-align: center;
     text-decoration: none;
@@ -30,11 +31,15 @@ nav{
 }
 
 .bnt:visited{
-    background-color: red;
+    background-color: black;
 }
 
 canvas{
     border: 1px soild black;
     background-color: teal;
     margin-bottom: 10px;
+}
+/*.image{
+    width: 650px;
+    height: 450px;
 }
