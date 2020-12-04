@@ -1,95 +1,138 @@
-
-var c = document.querySelector('canvas')
-var ctx = c.getContext('2d')
-var imgCount = 3 
-var images = []
-var timer = requestAnimationFrame
-
-    images[0] = new Image();
-    images[0] = 'images/rock.jpg'
-    images[1] = new Image();
-    images[1] = 'images/scissor.jpg'
-    images[2] = new Image();
-    images[2] = 'images/paper.jpg'
-
-
-var rps = [];
-rps[0] = "Rock"
-rps[1] = "Paper"
-rps[2] = "Scissors"
-
-var btn = document.querySelectorAll('a')
-btn[0].innerHTML = rps[0]
-btn[1].innerHTML = rps[1]
-btn[2].innerHTML = rps[2]
-
-btn[0].addEventListener( 'click', function(e){
-    play(0)
-})
-btn[1].addEventListener( 'click', function(e){
-    play(1)
-})
-btn[2].addEventListener( 'click', function(e){
-    play(2)
-})
-
-    function play (pChoice){
-        ctx.clearRect(0,0, c.width,c.height)
-        var cChoice = Math.floor(Math.random()*2.999999)
-
-        ctx.fillstyle = "red"
-        ctx.font = "40px Arial"
-        ctx.textAlign = "center"
-        ctx.fillText("player's choice:" + rps[pChoice] + " computer choice:" + rps[cChoice], c.width/2 , c.height/2) 
-
-
-switch(pChoice){
+window.onload = function(){
+    var c = document.querySelector("canvas");
+    var ctx = c.getContext("2d");
+    var wins = 0
+    var draws = 0
+    var Losts = 0
+    var rock = new Image();
+    var paper = new Image();
+    var scissor = new Image();
+    var hrock = new Image();
+    var hpaper = new Image();
+    var hscissor = new Image();
+    
+    rock.src = "images/rock.jpg";
+    paper.src = "images/paper.jpg";
+    scissor.src = "images/scissors.jpg";
+    
+    hrock.src = "images/rock2.jpg";
+    hpaper.src = "images/paper2.jpg";
+    hscissor.src = "images/scissors2.jpg";
+    
+    hscissor.onload = function(){
+        draw(rock, paper,scissor, rock, paper,scissor,wins,Losts,draws);
+    }
+    
+    var results = "Pick an option from the buttons above."
+    
+    
+    var rps = [];
+    rps[0] = "Rock";
+    rps[1] = "Paper";
+    rps[2] = "Scissors";
+    
+    //Array of Buttons
+    var btn = document.querySelectorAll('a');
+    //assign event listeners to the buttons
+    btn[0].addEventListener('click', function(e){play(0)});
+    btn[1].addEventListener('click', function(e){play(1)});
+    btn[2].addEventListener('click', function(e){play(2)});
+    
+    function play(playersChoice){
+        var cpuChoice = Math.floor(Math.random() * 2.999);
+       //alert("Player Choice: " + rps[playersChoice] + " vs. Computer Choice: " + rps[cpuChoice]);
+    
+        switch(playersChoice){
             case 0:
-                if(cChoice === 0){
-                ctx.fillText('You TIED', c.width/2, c.height/2 + 100)
-       }
-    else if(cChoice === 1)
-    {
-        ctx.fillText('you LOST', c.width/2, c.height/2 + 100)
-    }
-    else
-    {
-        ctx.fillText('You WIN', c.width/2, c.height/2 + 100)
-    } 
-    break;
+                if(cpuChoice === 0){
+                    //alert("It's a tie!");
+                    results = "Its a tie!";
+                    draw(hrock,paper,scissor,hrock,paper,scissor,wins,Losts,draws);
+                    draws +=1
+                }
+                else if(cpuChoice === 1){
+                    //alert("You Lost!");
+                    results = "You Lost!";
+                    draw(hrock,paper,scissor,rock,hpaper,scissor,wins,Losts,draws);
+                    Losts +=1
+                } 
+                else{
+                    //alert("You Win!");
+                    results = "You Win";
+                    draw(hrock,paper,scissor,rock,paper,hscissor,wins,Losts,draws);
+                    wins +=1
+                }
+                break;
             case 1:
-                if(cChoice === 0){
-                ctx.fillText('You WIN', c.width/2, c.height/2 + 100)
-       }
-    else if(cChoice === 1)
-    {
-        ctx.fillText('you TIED', c.width/2, c.height/2 + 100)
+                if(cpuChoice === 0){
+                   // alert("You Win!");
+                    results = "You Win!";
+                    draw(rock,hpaper,scissor,hrock,paper,scissor,wins,Losts,draws);
+                    wins +=1
+                }
+                else if(cpuChoice === 1){
+                    //alert("It's a tie!");
+                    results = "It's a tie!";
+                    draw(rock,hpaper,scissor,rock,hpaper,scissor,wins,Losts,draws);
+                    draws +=1
+                } 
+                else{
+                    //alert("You Lost!");
+                    results = "You Lost!";
+                    draw(rock,hpaper,scissor,rock,paper,hscissor,wins,Losts,draws);
+                    Losts +=1
+                } 
+                break;
+            case 2: 
+                if(cpuChoice === 0){
+                    //alert("You Lose!");
+                    results = "You Lost!";
+                    draw(rock,paper,hscissor,hrock,paper,scissor,wins,Losts,draws);
+                    Losts +=1
+                }
+                else if(cpuChoice === 1){
+                    //alert("You Win!");
+                    results = "You Win!";
+                    draw(rock,paper,hscissor,rock,hpaper,scissor,wins,Losts,draws);
+                    wins +=1
+                } 
+                else{
+                    //alert("It's a tie!");
+                    results = "It's a tie!";
+                    draw(rock,paper,hscissor,rock,paper,hscissor,wins,Losts,draws);
+                    draws +=1
+                }
+                break;
+        }
     }
-    else
-    {
-        ctx.fillText('You LOST', c.width/2, c.height/2 + 100)
-    } 
-    break;
-            case 2:
-                if(cChoice === 0){
-                ctx.fillText('You LOST', c.width/2, c.height/2 + 100)
-       }
-    else if(cChoice === 1)
-    {
-        ctx.fillText('you WIN', c.width/2, c.height/2 + 100)
+    
+    function draw(rock, paper, scissor, crock, cpaper, cscissor,wins,Losts,draws){
+        ctx.clearRect(0,0,c.width,c.height);
+        ctx.fillRect(0,0,c.width,c.height);
+    
+        ctx.save();
+        ctx.font = "30px Arial";
+        ctx.textAlign = "center";
+        ctx.fillStyle = "white";
+        ctx.fillText("Player Choice", c.width/2, 100);
+        ctx.drawImage(rock, c.width/2 - rock.width/2 -100, 150);
+        ctx.drawImage(paper, c.width/2 - paper.width/2, 150);
+        ctx.drawImage(scissor, c.width/2 - scissor.width/2 + 100, 150);
+    
+        ctx.fillText("Computer Choice", c.width/2, 325);
+        ctx.drawImage(crock, c.width/2 - rock.width/2 - 100, 375);
+        ctx.drawImage(cpaper, c.width/2 - paper.width/2, 375);
+        ctx.drawImage(cscissor, c.width/2 - scissor.width/2 + 100, 375);
+        //displays results
+        ctx.fillText(results, c.width/2, 525);    
+        ctx.fillText(wins.toFixed(0), 193, 80)
+        ctx.fillText('wins:', 50, 80)
+        ctx.fillText(draws.toFixed(0), 400, 80)
+        ctx.fillText('  draws:', 250, 80)
+        ctx.fillText(Losts.toFixed(0), 600, 80)
+        ctx.fillText(' losts:',450, 80)
+        ctx.restore();
     }
-    else
-    {
-        ctx.fillText('You TIED', c.width/2, c.height/2 + 100)
-    } 
-    break;
-
-}
-}
-
-function draw(){
-    ctx.drawImage(images[0], 300, 200);
-    ctx.drawImage(images[1], 400, 200);
-    ctx.drawImage(images[2], 500, 200);
-} 
-draw()
+    
+    }
+    
