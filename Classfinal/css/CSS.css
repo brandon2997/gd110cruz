@@ -1,0 +1,29 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    
+}
+body{
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto Mono', monospace;
+    background-color: indigo;
+    background-image: url(../images/seamless.png);
+    background-repeat: repeat;
+}
+#cont{
+background-color: blue;
+}
+h1{
+    text-align: center;
+    background-color: greenyellow;
+}
+
+
+footer{
+    text-align: center;
+    background-color: greenyellow;
+}
+canvas{
+    background-image: url(../images/seamless.png)
+}
