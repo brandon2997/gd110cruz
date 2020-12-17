@@ -98,10 +98,10 @@ function PlayerShip(){
             }
             context.fillStyle = "orange";
             context.beginPath();
-            context.moveTo(this.flamelength,0);
+            context.moveTo(0,this.flamelength);
             context.lineTo(10, 15);
             context.lineTo(10, -15);
-            context.lineTo(this.flamelength,0 );
+            context.lineTo(0, this.flamelength );
             context.closePath();
             context.fill();
             context.restore();
@@ -174,7 +174,7 @@ function keyPressDown(e){
                 numAsteroids = 10;
                 asteroids = [];
                 gameStart();
-                
+                main();
                 currentState = 0;
 
             }
@@ -182,7 +182,8 @@ function keyPressDown(e){
                 gameStart();
                 gameOver = false;
                 currentState = 1;
-                setTimeout(scoreTimer, 1000);
+                main();
+                scoreTimer();
             }
         }
     }
@@ -304,8 +305,11 @@ function main(){
     /*
         this is where our original game code was
     */
+    if(gameOver == false){
+        
+        timer = requestAnimationFrame(main);
+    }
     gameStates[currentState]();
-    timer = requestAnimationFrame(main);
 }
 
 function scoreTimer(){
